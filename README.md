@@ -1,6 +1,6 @@
 # khelive
-A utility to get cricket and football scores updates. To use:-
-1. Enter c in command line arguments for getting cricket score updates.
+A utility to get cricket and football scores updates. To use:-<br>
+1. Enter c in command line arguments for getting cricket score updates.<br>
 2. Enter f in command line arguments for getting football scrore updates.
 
 <b>ENJOY....</b><br><br>
