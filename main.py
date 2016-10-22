@@ -3,7 +3,20 @@ import urllib2
 from itertools import izip
 import sys
 url1='http://www.espncricinfo.com/ci/engine/match/index.html?view=live'
+
+
+def check_internet():
+    try:
+        response=urlib2.urlopen(url1,timeout=20)
+        return true
+    except urlib2.URLError as err: pass
+    return false
+
 def crickinfo():
+    res=check_internet()
+    if(!res):
+        print("Please check the internet connection. Either slow or not connected")
+        return
     cricfile=urllib2.urlopen(url1)
     crichtm=cricfile.read()
     cricfile.close()
@@ -21,6 +34,10 @@ def crickinfo():
     return "{" + "\n".join("{} {}".format(k.strip(), v.strip()) for k, v in matches.items()) + "}"
 
 def footballinfo():
+    res=check_internet()
+    if(!res):
+        print("Please check the internet connection. Either slow or not connected")
+        return
     goalfile=urllib2.urlopen('http://www.livegoals.com/')
     goalhtm=goalfile.read()
     goalfile.close()
