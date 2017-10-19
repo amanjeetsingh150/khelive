@@ -42,7 +42,10 @@ def footballinfo():
     return "{" + "\n".join("{} {} {}".format(i,j,k) for i,j,k in zip(sc,h,aw)) + "}"
     
 def main():
-    arguments=sys.argv[1]
+    
+    print 'Welcome to KhelLive! Enter c for Cricket updates and f for football updates!'
+    arguments  = raw_input()
+    
     if (arguments) == 'c':
         crickinfo()
     if (arguments) == 'f':
